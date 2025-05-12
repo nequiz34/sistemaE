@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Experto: Reconocimiento de Hongos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Sistema Experto: Reconocimiento de Hongos</h1>
+        <div class="form-contenedor">
+            <h2>Identificar Hongo</h2>
+            <a href="identificar.html">¿No sabes cmo identificar las caracteristicas fisicas de un hongo?, da click aqui para guiarte</a>
+            <form id="hongoForm">
+                <label for="gorro">Forma del gorro:</label>
+                <select id="gorro" required>
+                    <option value="">Seleccione...</option>
+                    <option value="convexo">Convexo</option>
+                    <option value="plano">Plano</option>
+                    <option value="cónico">Cónico</option>
+                    <option value="cilindrico">Cilíndrico</option>
+                    <option value="campanulado">Campanulado</option>
+                    <option value="umbanado">Umbanado</option>
+                    <option value="umbilicado">Umbilicado</option>
+                    <option value="deprimido">Deprimido</option>
+                    <option value="infundibuliforme">Infundibuliforme</option>
+                </select>
+                <label for="anillo">¿Tiene un Anillo?</label>
+                <select id="anillo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="si tiene anillo">si tiene anillo</option>
+                    <option value="no tiene anillo">no tiene anillo</option>
+                </select>
+                <label for="volva">¿Tiene una volva?</label>
+                <select id="volva" required>
+                    <option value="">Seleccione...</option>
+                    <option value="si tiene volva">si tiene volva</option>
+                    <option value="no tiene volva">no tiene volva</option>
+                </select>
+                <label for="firmeza">¿Qué firmeza tiene un hongo?</label>
+                <select id="firmeza" required>
+                    <option value="">Seleccione...</option>
+                    <option value="firme">Firme</option>
+                    <option value="carnosa">Carnosa</option>
+                     <option value="dura">Dura</option>
+                    <option value="fragil">Frágil</option>
+                    <option value="quebradiza">Quebradiza</option>
+                    <option value="elastica">Elástica</option>
+                    <option value="blanda">Blanda</option>
+                     <option value="acuosa">Acuosa</option>
+                    <option value="blanda">Blanda</option>
+                    <option value="poco-espesa">Un poco espesa</option>
+                </select>
+                <label for="posicion_anillo">Posición del Anillo</label>
+                <select id="posicion_anillo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="superior">Superior</option>
+                    <option value="anular">Zona anular</option>
+                </select>
+                <label for="color">Color:</label>
+                <select id="color" required>
+                    <option value="">Seleccione...</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="marrón">Marrón</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="naranja">Naranja</opttion>
+                </select>
+
+                <label for="laminas">Láminas:</label>
+                <select id="laminas" required>
+                    <option value="">Seleccione...</option>
+                    <option value="libres">Libres</option>
+                    <option value="sinuadas">Sinuadas</option>
+                    <option value="adnatas">Adnatas</option>
+                    <option value="adnexas">Adnexas</option>
+                    <option value="decurrentes">Decurrentes</option>
+                </select>
+                <label for="espacio_laminas">Espacio entre Láminas:</label>
+                <select id="espacio_laminas" required>
+                    <option value="">Seleccione...</option>
+                    <option value="distantes">Distantes</option>
+                    <option value="subdistantes">Subdistantes</option>
+                    <option value="muy proximas">Muy próximas</option>
+                    <option value="proximas">Próximas</option>
+                </select>
+
+                <label for="tallo">Forma del tallo:</label>
+                <select id="tallo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="cilíndrico">Cilíndrico</option>
+                    <option value="engrosado">Engrosado</option>
+                </select>
+
+                <button type="submit">Identificar</button>
+            </form>
+        </div>
+       
+
+        <div class="contenedor-resultado">
+            <h2>Resultado</h2>
+            <p id="resultado">Ingrese las características del hongo para obtener un resultado.</p>
+            <div id="especie-info" class="caracteristicas_esp">
+                <h3>Especie: </h3><h3 id="especie"></h3>
+                <h3>Nombre: </h3><h3 id="nombre"></h3>
+                <p>Grupo:  </p><p id="grupo"></p>
+                <p id="caracteristicas"></p>
+                <p id="comestibilidad"></p>
+                <img id="imagen" src="" alt="Imagen del hongo"  style="width: 300px; margin: 0 auto; display: block;">
+            </div>
+        </div>
+
+        <div class="contenedor-reglas">
+            <h2>Agregar Nueva Regla</h2>
+            <form id="reglaForm">
+                <label for="caracteristicas">Características (separadas por comas):</label>
+                <input type="text" id="caracteristicas" placeholder="gorro:convexo,color:blanco,...">
+
+                <label for="nombre">Nombre científico:</label>
+                <input type="text" id="nombre" placeholder="Ejemplo: Agaricus bisporus">
+
+                <label for="descripcion">Características físicas:</label>
+                <textarea id="descripcion" placeholder="Detalles físicos del hongo"></textarea>
+
+                <label for="comestibilidad">Comestibilidad:</label>
+                <select id="comestibilidad" required>
+                    <option value="comestible">Comestible</option>
+                    <option value="no comestible">No comestible</option>
+                </select>
+
+                <label for="imagen">URL de la imagen:</label>
+                <input type="text" id="imagen" placeholder="URL de la imagen representativa">
+
+                <button type="submit">Agregar Regla</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
